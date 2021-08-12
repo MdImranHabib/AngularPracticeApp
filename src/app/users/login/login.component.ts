@@ -12,6 +12,25 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  disabledBox=true
+  show='blue'
+  color='red'
+  data=['Imran', 'Habib']
+  dataList=[
+    {
+      name:'Imran',
+      age:25
+    },
+    {
+      name:'Habib',
+      age:23
+    },
+    {
+      name:'Opu',
+      age:26
+    }
+  ]
+
   getName(name){
     alert(name)
   }
@@ -19,8 +38,6 @@ export class LoginComponent implements OnInit {
   myEvent(evt){
     console.warn(evt)
   }
-
-  disabledBox=true
 
   enabledBox(){
     this.disabledBox = false
