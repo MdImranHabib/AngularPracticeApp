@@ -20,4 +20,10 @@ export class LoginComponent implements OnInit {
     console.warn(evt)
   }
 
+  disabledBox=true
+
+  enabledBox(){
+    this.disabledBox = false
+  }
+
 }
