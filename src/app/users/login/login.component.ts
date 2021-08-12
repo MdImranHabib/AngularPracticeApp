@@ -12,4 +12,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getName(name){
+    alert(name)
+  }
+
+  myEvent(evt){
+    console.warn(evt)
+  }
+
 }

@@ -1,1 +1,15 @@
-<p>login works!</p>
+<button (click)="getName('Imran')">Get Name</button>
+<br><br>
+<input type="text" #box (keyup)="myEvent(box.value)"> keyup
+<br><br>
+<input type="text" (keydown)="myEvent('keydown')"> keydown
+<br><br>
+<input type="text" (blur)="myEvent(box.value)"> blur
+<br><br>
+<div (mouseover)="myEvent('mouseover')" style="background-color: skyblue;">
+Mouse Over
+</div>
+<br><br>
+<div (mouseleave)="myEvent('mouseleave')" style="background-color: skyblue;">
+Mouse leave
+</div>
