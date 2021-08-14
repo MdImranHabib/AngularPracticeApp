@@ -1,63 +1,24 @@
-<button (click)="getName('Imran')">Get Name</button>
-<br><br>
-<input type="text" #box (keyup)="myEvent(box.value)"> keyup
-<br><br>
-<input type="text" (keydown)="myEvent('keydown')"> keydown
-<br><br>
-<input type="text" (blur)="myEvent(box.value)"> blur
-<br><br>
-<div (mouseover)="myEvent('mouseover')" style="background-color: skyblue;">
-Mouse Over
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <section>
+                <form #simpleLoginForm="ngForm" (ngSubmit)="getValue(simpleLoginForm.value)">
+                    <h4>Simple Template Driven Angular Login Form</h4>
+                    <hr />
+                    <div class="text-danger"></div>
+                    <div class="form-group">
+                        <label>User Name</label>
+                        <input type="text" ngModel name="username" class="form-control" />                  
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" ngModel name="password" class="form-control" />                   
+                    </div>                
+                    <div class="form-group">
+                        <button class="btn btn-secondary btn-block">Log in</button>
+                    </div>                
+                </form>
+            </section>
+        </div>    
+    </div>
 </div>
-<br><br>
-<div (mouseleave)="myEvent('mouseleave')" style="background-color: skyblue;">
-Mouse leave
-</div>
-<br><br>
-<input type="text" [disabled]="disabledBox" value="imran" />
-<br><br>
-<input type="text" disabled={{disabledBox}} value="imran" />
-<br><br>
-<button (click)="enabledBox()">Enable Box</button>
-<br><br>
-
-<ng-template [ngIf]="show=='red'">
-    <h1>Red Block</h1>
-</ng-template>
-<ng-template [ngIf]="show=='green'">
-    <h1>Green Block</h1>
-</ng-template>
-<ng-template [ngIf]="show=='blue'">
-    <h1>Blue Block</h1>
-</ng-template>
-<br><br>
-<div [ngSwitch]="color">
-    <h2 *ngSwitchCase="'red'">
-        Red Color
-    </h2>
-    <h2 *ngSwitchCase="'green'">
-        Green Color
-    </h2>
-    <h2 *ngSwitchCase="'blue'">
-        Blue Color
-    </h2>
-</div>
-<br>
-<h3 *ngFor="let item of data">
-    {{item}}
-</h3>
-<br>
-<table border="1">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-        </tr>
-    </thead>
-    <tbody >
-        <tr *ngFor="let item of dataList">
-            <td>{{item.name}}</td>
-            <td>{{item.age}}</td>
-        </tr>
-    </tbody>
-</table>
