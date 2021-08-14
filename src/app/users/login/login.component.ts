@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   }
 
   getValue(value){
-    console.log(value)
+    console.log(value)   
   }
 
 }
