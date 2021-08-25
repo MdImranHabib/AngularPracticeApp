@@ -16,12 +16,14 @@ export class FlatListComponent implements OnInit {
     this.loadFlatData();
   }
 
+  flatList:Flat[];
   baseUrl = environment.apiUrl;
 
   loadFlatData(){
     this.getFlatData().subscribe((res:Flat[])=>
     {
-      console.log(res);
+      this.flatList = res;
+      console.log(this.flatList);      
     })
   }
 
