@@ -2,6 +2,8 @@
     <div class="row">
         <div class="col-md-12">
             <h3>Flat List</h3>
+            <hr>
+            <!-- <a class="btn btn-info" routerLink="/create-flat">Add New Flat</a> -->
             <br>
             <table class="table table-bordered table-hover">
               <thead>
@@ -20,7 +22,7 @@
                   <td>{{item.meterNo}}</td>
                   <td>{{item.rent}}</td>
                   <ng-template [ngIf]="item.status==true">
-                    <td class="text-danger">Occupied</td>
+                    <td class="badge badge-danger">Occupied</td>
                   </ng-template>
                   <ng-template [ngIf]="item.status==false">
                     <td class="badge badge-success">Free</td>

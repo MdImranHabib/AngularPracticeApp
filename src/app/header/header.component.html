@@ -8,21 +8,14 @@
           <ul class="navbar-nav">           
             <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" routerLink="">Home</a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" routerLink="/flat-list">Flat List</a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" routerLink="/resident-list">Resident List</a>
-            </li>
+            </li>            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown link
+                Flat
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" routerLink="/flat-list">Flat List</a>
+                <a class="dropdown-item" routerLink="/create-flat">Add Flat</a>               
               </div>
             </li>
           </ul>

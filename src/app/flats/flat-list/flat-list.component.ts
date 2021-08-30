@@ -22,8 +22,7 @@ export class FlatListComponent implements OnInit {
   loadFlatData(){
     this.getFlatData().subscribe((res:Flat[])=>
     {
-      this.flatList = res;
-      console.log(this.flatList);      
+      this.flatList = res;         
     })
   }
 
