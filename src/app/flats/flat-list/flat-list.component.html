@@ -13,6 +13,7 @@
                   <th>Meter No</th>
                   <th>Rent</th>
                   <th>Status</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -21,12 +22,16 @@
                   <td>{{item.category}}</td>
                   <td>{{item.meterNo}}</td>
                   <td>{{item.rent}}</td>
-                  <ng-template [ngIf]="item.status==true">
-                    <td class="badge badge-danger">Occupied</td>
+                  <ng-template [ngIf]="item.status==true">             
+                    <td><span class="badge badge-danger">Occupied</span></td>
                   </ng-template>
                   <ng-template [ngIf]="item.status==false">
-                    <td class="badge badge-success">Free</td>
+                    <td><span class="badge badge-success">Free</span></td>
                   </ng-template>
+                  <td>
+                    <a class="btn btn-sm btn-warning" routerLink="/edit-flat">Edit</a>
+                    <!-- <a class="btn btn-sm btn-warning" (click)="">Edit</a> -->
+                  </td>
                 </tr>
               </tbody>
             </table>

@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   
-  apiUrl: "https://localhost:44354/api/"
+  //apiUrl: "https://localhost:44354/api/"  //this for .net2.1
+  apiUrl: "http://localhost:49918/api/"
 };
 
 /*

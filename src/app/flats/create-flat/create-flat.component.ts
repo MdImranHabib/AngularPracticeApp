@@ -15,11 +15,10 @@ export class CreateFlatComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  flatList:Flat[];
   baseUrl = environment.apiUrl;
 
-  saveFlatData(value){     
-    this.http.post(this.baseUrl + "Flats", value).subscribe((result)=>{
+  saveFlatData(value){    
+    this.http.post(this.baseUrl + "flats", value).subscribe((result)=>{
       console.log("result", result);
       
     })
