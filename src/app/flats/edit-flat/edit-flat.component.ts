@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Flat } from 'src/app/Models/FlatModel';
@@ -10,27 +10,32 @@ import { Flat } from 'src/app/Models/FlatModel';
 })
 export class EditFlatComponent implements OnInit {
 
-  baseUrl = environment.apiUrl;
-  flat:Flat;
-
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
-    this.getFlatData(1);    
-  }
+  baseUrl = environment.apiUrl;
 
-  getFlatData(id){ 
-    return this.http.get<Flat>(this.baseUrl + "flats/" + id).subscribe((res:Flat)=>
-    {
-      this.flat = res;          
-    })
+  @Input() flat:any;
+  id:number;
+  name:string;
+  category:string;
+  description:string;
+  rent:number;
+  meterNo:string;
+  status:boolean;
+
+  ngOnInit(): void {
+    this.id=this.flat.id;
+    this.name=this.flat.name;
+    this.category=this.flat.category;
+    this.description=this.flat.description;
+    this.rent=this.flat.rent;
+    this.meterNo=this.flat.meterNo;
   }
 
   updateFlatData(value){ 
 
-    this.http.put(this.baseUrl + "flats/" + value.id, value).subscribe((result)=>{
-      console.log("result", result);
-      
+    this.http.put(this.baseUrl + "flats/" + value.id, value).subscribe(result=>{
+      alert("Updated Successfully!");      
     })
   }
 

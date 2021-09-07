@@ -4,6 +4,30 @@
             <h3>Flat List</h3>
             <hr>
             <!-- <a class="btn btn-info" routerLink="/create-flat">Add New Flat</a> -->
+            
+            <!-- Button trigger modal -->
+            <!-- <button type="button" (click)="addClick()" class="btn btn-primary float-right m-2" 
+              data-toggle="modal" data-target="#exampleModal" data-backdrop="static" data-keyboard="false">
+              Add New Flat
+            </button> -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+                    <button type="button" (click)="closeClick()" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <app-edit-flat [flat]="flat" *ngIf="ActivateEditFlatComp"></app-edit-flat>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+
             <br>
             <table class="table table-bordered table-hover">
               <thead>
@@ -28,9 +52,15 @@
                   <ng-template [ngIf]="item.status==false">
                     <td><span class="badge badge-success">Free</span></td>
                   </ng-template>
-                  <td>
-                    <a class="btn btn-sm btn-warning" routerLink="/edit-flat">Edit</a>
-                    <!-- <a class="btn btn-sm btn-warning" (click)="">Edit</a> -->
+                  <td>                   
+                    <button type="button" (click)="editClick(item)" class="btn btn-sm btn-warning" data-toggle="modal" 
+                      data-target="#exampleModal" data-backdrop="static" data-keyboard="false">
+                      Edit
+                    </button>
+                   ||
+                    <button type="button" (click)="deleteClick(item)" class="btn btn-sm btn-danger">
+                    Delete
+                  </button>
                   </td>
                 </tr>
               </tbody>
